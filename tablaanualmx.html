@@ -1,10 +1,75 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estadísticas Liga MX</title>
-    <link rel="stylesheet" href="estilo.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .search-container {
+            text-align: center;
+            margin: 20px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 50%;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+     th {
+    background-color: #007BFF; /* azul fuerte */
+    color: #fff; /* texto blanco para mejor contraste */
+    font-weight: bold;
+}
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .resaltado-azul {
+            background-color: #cce5ff !important;
+            font-weight: bold;
+        }
+        .lider-verde {
+            background-color: #d4edda !important;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,82 +88,87 @@
 
     <div class="container">
         <h1>Tabla Anual de la Liga Mx</h1>
-        <table>
+
+        <div class="search-container">
+            <input type="text" id="busqueda" placeholder="Buscar equipo..." onkeyup="filtrarEquipos()">
+        </div>
+
+        <table id="tablaEquipos">
             <thead>
                 <tr>
-                    <th>Pos</th>
-                    <th>Club</th>
-                    <th>JJ</th>
-                    <th>JG</th>
-                    <th>JP</th>
-                    <th>JE</th>
-                    <th>GF</th>
-                    <th>GC</th>
-                    <th>DIF</th>
-                    <th>PTS</th>
+                   <th>Posición</th>
+<th>Equipo</th>
+<th>Juegos Jugados</th>
+<th>Juegos Ganados</th>
+<th>Juegos Perdidos</th>
+<th>Juegos Empatados</th>
+<th>Goles a Favor</th>
+<th>Goles en Contra</th>
+<th>Diferencia de Goles</th>
+<th>Puntos</th>
+
                 </tr>
             </thead>
-
             <tbody>
-                <tr>
+                <tr class="resaltado-azul lider-verde">
                     <td>1</td>
                     <td>América</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td>34</td>
+                    <td>22</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>68</td>
+                    <td>35</td>
+                    <td>+33</td>
+                    <td>72</td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Atlas</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td>Tigres</td>
+                    <td>34</td>
+                    <td>20</td>
+                    <td>8</td>
+                    <td>6</td>
+                    <td>62</td>
+                    <td>38</td>
+                    <td>+24</td>
+                    <td>66</td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Atlético de San Luis</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td>Monterrey</td>
+                    <td>34</td>
+                    <td>19</td>
+                    <td>8</td>
+                    <td>7</td>
+                    <td>58</td>
+                    <td>36</td>
+                    <td>+22</td>
+                    <td>64</td>
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td>Tijuana</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td>Cruz Azul</td>
+                    <td>34</td>
+                    <td>17</td>
+                    <td>9</td>
+                    <td>8</td>
+                    <td>52</td>
+                    <td>38</td>
+                    <td>+14</td>
+                    <td>59</td>
                 </tr>
                 <tr>
                     <td>5</td>
-                    <td>Cruz Azul</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td>León</td>
+                    <td>34</td>
+                    <td>16</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>48</td>
+                    <td>40</td>
+                    <td>+8</td>
+                    <td>56</td>
                 </tr>
                 <tr>
                     <td>6</td>
@@ -259,5 +329,21 @@
             </tbody>
         </table>
     </div>
+	  <script>
+        function filtrarEquipos() {
+            const input = document.getElementById("busqueda");
+            const filtro = input.value.toLowerCase();
+            const tabla = document.getElementById("tablaEquipos");
+            const filas = tabla.getElementsByTagName("tr");
+
+            for (let i = 1; i < filas.length; i++) {
+                const celdas = filas[i].getElementsByTagName("td");
+                if (celdas.length > 1) {
+                    const equipo = celdas[1].textContent.toLowerCase();
+                    filas[i].style.display = equipo.includes(filtro) ? "" : "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
