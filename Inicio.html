@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>JornadaMx</title>
+</head>
+<body>
+    <section class="Fuente-Igual">
+        <header>
+            <img src="imgeq/logo.jpg">
+            <h1>JornadaMx</h1>
+            <p>¡La información más nueva de nuestra liga!</p>
+        </header>
+    </section>
+    <nav>
+        <ul>
+            <li><a href="Jornada.html">Jornada Actual</a></li>
+            <li><a href="Tabla-General.html">Tabla General</a></li>
+            <li><a href="tabla-goleadores.html">Tabla de Goleo</a></li>
+            <li><a href="equiposligamx.html">Equipos</a></li>
+            <li><a href="tablaanualmx.html">Tabla Anual</a></li>
+            <li><a href="PartidosP.html">Partidos Pasados</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de Bienvenida Principal -->
+    <section class="welcome-hero">
+        <div class="hero-content">
+            <h2>🏆 Bienvenido a JornadaMx</h2>
+            <p class="hero-subtitle">Tu fuente oficial de información de la Liga MX</p>
+            <p class="hero-description">
+                Descubre todo sobre el fútbol mexicano: resultados en tiempo real, estadísticas completas, 
+                análisis de partidos y la información más actualizada de todos los equipos de la Primera División.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label">Equipos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">17</span>
+                    <span class="stat-label">Jornadas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">306</span>
+                    <span class="stat-label">Partidos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <article>
+            <!-- Carrusel de equipos -->
+            <div class="section-header">
+                <h3>⚽ Equipos de la Liga MX</h3>
+                <p>Conoce a todos los clubes que participan en el torneo más emocionante de México</p>
+            </div>
+            
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <img src="imgeq/ame.png" alt="Club América">
+                    <img src="imgeq/atlas.png" alt="Atlas">
+                    <img src="imgeq/Atleti.png" alt="Atlético de San Luis">
+                    <img src="imgeq/chi.png" alt="Chivas">
+                    <img src="imgeq/cru.png" alt="Cruz Azul">
+                    <img src="imgeq/leo.png" alt="León">
+                    <img src="imgeq/mty.png" alt="Monterrey">
+                    <img src="imgeq/nec.png" alt="Necaxa">
+                    <img src="imgeq/pac.png" alt="Pachuca">
+                    <img src="imgeq/pue.png" alt="Puebla">
+                    <img src="imgeq/pum.png" alt="Pumas">
+                    <img src="imgeq/san.png" alt="Santos">
+                    <img src="imgeq/tig.png" alt="Tigres">
+                    <img src="imgeq/tij.png" alt="Tijuana">
+                    <img src="imgeq/tol.png" alt="Toluca">
+                </div>
+                <button class="carousel-controls prev" onclick="prevSlide()">❮</button>
+                <button class="carousel-controls next" onclick="nextSlide()">❯</button>
+                <div class="carousel-indicators" id="indicators"></div>
+            </div>
+
+            <!-- Sección de Noticias Destacadas -->
+            <div class="news-section">
+                <div class="section-header">
+                    <h3>📰 Últimas Noticias</h3>
+                    <p>Mantente al día con las noticias más importantes del fútbol mexicano</p>
+                </div>
+                
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-icon">🏆</div>
+                        <h4>Liguilla 2025</h4>
+                        <p>Se acerca la fase final del torneo. Conoce qué equipos están clasificando a la liguilla.</p>
+                        <span class="news-date">Hace 2 horas</span>
+                    </div>
+                    
+                    <div class="news-card">
+                        <div class="news-icon">⚽</div>
+                        <h4>Goleadores del Torneo</h4>
+                        <p>Descubre quiénes lideran la tabla de goleo en este emocionante torneo.</p>
+                        <span class="news-date">Hace 4 horas</span>
+                    </div>
+                    
+                    <div class="news-card">
+                        <div class="news-icon">📊</div>
+                        <h4>Análisis Estadístico</h4>
+                        <p>Estadísticas completas de la jornada: goles, tarjetas, posesión y más.</p>
+                        <span class="news-date">Hace 6 horas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de Información Rápida -->
+            <div class="info-section">
+                <div class="section-header">
+                    <h3>🎯 Información Destacada</h3>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">🥅</div>
+                        <div class="info-content">
+                            <h4>Próxima Jornada</h4>
+                            <p>Fin de semana lleno de emociones con partidos decisivos para la clasificación.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">🏟️</div>
+                        <div class="info-content">
+                            <h4>Estadios Emblemáticos</h4>
+                            <p>Desde el Azteca hasta el Volcán, conoce los templos del fútbol mexicano.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">📱</div>
+                        <div class="info-content">
+                            <h4>App Móvil</h4>
+                            <p>Lleva toda la información de la Liga MX contigo a donde vayas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Datos curiosos -->
+            <div class="fun-facts">
+                <div class="section-header">
+                    <h3>🔥 ¿Sabías que...?</h3>
+                </div>
+                
+                <div class="facts-container">
+                    <div class="fact-item" onclick="rotateFact()">
+                        <div class="fact-icon">💡</div>
+                        <p id="rotating-fact">La Liga MX es considerada una de las ligas más competitivas de América.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visit-counter">
+                Esta página ha sido visitada <span id="contador">1247</span> veces.
+            </div>
+        </article>
+    </section>
+
+    <script>
+        // Variables del carrusel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel img');
+        const totalSlides = slides.length;
+        
+        // Crear indicadores
+        function createIndicators() {
+            const indicatorsContainer = document.getElementById('indicators');
+            for (let i = 0; i < totalSlides; i++) {
+                const indicator = document.createElement('div');
+                indicator.className = 'indicator';
+                if (i === 0) indicator.classList.add('active');
+                indicator.onclick = () => goToSlide(i);
+                indicatorsContainer.appendChild(indicator);
+            }
+        }
+        
+        // Actualizar carrusel
+        function updateCarousel() {
+            const carousel = document.getElementById('carousel');
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Actualizar indicadores
+            document.querySelectorAll('.indicator').forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        // Función para ir a slide específico
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+        
+        // Función para slide anterior
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        // Función para siguiente slide
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        // Auto-slide cada 4 segundos
+        setInterval(() => {
+            nextSlide();
+        }, 4000);
+        
+        // Inicializar carrusel
+        createIndicators();
+        
+        // Datos curiosos rotativos
+        const facts = [
+            "La Liga MX es considerada una de las ligas más competitivas de América.",
+            "El Estadio Azteca es uno de los estadios más grandes del mundo con capacidad para 87,000 espectadores.",
+            "Chivas es el único equipo que solo juega con jugadores mexicanos.",
+            "La Liga MX fue fundada en 1943 y es una de las ligas más antiguas de América.",
+            "El América es el equipo con más títulos de liga en la historia del fútbol mexicano.",
+            "Los Clásicos más importantes son: América vs Chivas, Cruz Azul vs América, y Pumas vs América.",
+            "La Liga MX tiene formato de torneos cortos: Apertura y Clausura.",
+            "México es el único país que ha organizado dos Copas del Mundo (1970 y 1986)."
+        ];
+        
+        let currentFactIndex = 0;
+        
+        function rotateFact() {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            const factElement = document.getElementById('rotating-fact');
+            factElement.style.opacity = '0';
+            
+            setTimeout(() => {
+                factElement.textContent = facts[currentFactIndex];
+                factElement.style.opacity = '1';
+            }, 300);
+        }
+        
+        // Rotar datos curiosos automáticamente cada 8 segundos
+        setInterval(rotateFact, 8000);
+        
+        // Animación de contador de estadísticas
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            const step = target / (duration / 16);
+            
+            function updateCounter() {
+                start += step;
+                if (start < target) {
+                    element.textContent = Math.floor(start);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            }
+            updateCounter();
+        }
+        
+        // Animar estadísticas cuando se carga la página
+        window.addEventListener('load', function() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const targets = [18, 17, 306];
+            
+            statNumbers.forEach((stat, index) => {
+                setTimeout(() => {
+                    animateCounter(stat, targets[index], 2000);
+                }, index * 200);
+            });
+        });
+        
+        // Animación del menú
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('nav a');
+            navItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+                item.classList.add('menu-item-animate');
+            });
+        });
+        
+        // Simulador de contador para la versión HTML estática
+        let contadorActual = parseInt(document.getElementById('contador').textContent);
+        contadorActual++;
+        document.getElementById('contador').textContent = contadorActual;
+        
+        // Guardar en localStorage para persistencia básica
+        localStorage.setItem('visitas', contadorActual);
+        
+        // Cargar contador desde localStorage si existe
+        window.addEventListener('load', function() {
+            const visitasGuardadas = localStorage.getItem('visitas');
+            if (visitasGuardadas) {
+                document.getElementById('contador').textContent = visitasGuardadas;
+            }
+        });
+        
+        // Efecto de parallax suave para el header
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            const header = document.querySelector('header');
+            if (header) {
+                header.style.transform = `translateY(${rate}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
