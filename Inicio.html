@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/inicio.css">
     <title>JornadaMx</title>
 </head>
 <body>
@@ -162,6 +162,68 @@
                 </div>
             </div>
 
+            <!-- Blog Interactivo -->
+            <div class="blog-section">
+                <div class="section-header">
+                    <h3>📝 Artículos Recientes</h3>
+                    <p>Lee, comenta y participa en la comunidad JornadaMx</p>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card" onclick="expandBlog(this)">
+                        <h4>¿Quién será el campeón del torneo?</h4>
+                        <p class="blog-preview">Analizamos a los favoritos y sus posibilidades según las estadísticas...</p>
+                        <div class="blog-content" style="display:none;">
+                            <p>América y Tigres parten como favoritos, pero Monterrey y Cruz Azul han mostrado gran regularidad. ¿Quién crees que dará la sorpresa?</p>
+                        </div>
+                    </div>
+                    <div class="blog-card" onclick="expandBlog(this)">
+                        <h4>El impacto de los jóvenes en la Liga MX</h4>
+                        <p class="blog-preview">Cada vez más equipos apuestan por talento joven. ¿Quiénes destacan?</p>
+                        <div class="blog-content" style="display:none;">
+                            <p>Jugadores como Marcelo Flores y Fidel Ambriz están revolucionando el medio campo. ¿A quién agregarías a la lista?</p>
+                        </div>
+                    </div>
+                    <div class="blog-card" onclick="expandBlog(this)">
+                        <h4>¿Debe cambiar el formato de la liguilla?</h4>
+                        <p class="blog-preview">Muchos aficionados piden ajustes. ¿Tú qué opinas?</p>
+                        <div class="blog-content" style="display:none;">
+                            <p>Algunos proponen eliminar el repechaje, otros aumentar equipos. ¡Deja tu opinión abajo!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Encuesta interactiva -->
+            <div class="poll-section">
+                <div class="section-header">
+                    <h3>📊 Encuesta Rápida</h3>
+                </div>
+                <form id="pollForm" onsubmit="return votePoll(event)">
+                    <label>¿Quién es tu favorito para campeón?</label><br>
+                    <input type="radio" name="team" value="América"> América
+                    <input type="radio" name="team" value="Tigres"> Tigres
+                    <input type="radio" name="team" value="Monterrey"> Monterrey
+                    <input type="radio" name="team" value="Otro"> Otro<br>
+                    <button type="submit">Votar</button>
+                </form>
+                <div id="pollResult" style="display:none;"></div>
+            </div>
+
+            <!-- Comentarios -->
+            <div class="comments-section">
+                <div class="section-header">
+                    <h3>💬 Comentarios</h3>
+                </div>
+                <form id="commentForm" onsubmit="return addComment(event)">
+                    <input type="text" id="userName" placeholder="Tu nombre" required style="margin-bottom:5px;">
+                    <br>
+                    <textarea id="userComment" placeholder="Escribe tu comentario..." required></textarea>
+                    <br>
+                    <button type="submit">Comentar</button>
+                </form>
+                <div id="commentsList"></div>
+            </div>
+
             <div class="visit-counter">
                 Esta página ha sido visitada <span id="contador">1247</span> veces.
             </div>
@@ -314,6 +376,43 @@
                 header.style.transform = `translateY(${rate}px)`;
             }
         });
+        
+        // Blog interactivo
+        function expandBlog(card) {
+            const content = card.querySelector('.blog-content');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                card.classList.add('expanded');
+            } else {
+                content.style.display = 'none';
+                card.classList.remove('expanded');
+            }
+        }
+        // Encuesta interactiva
+        function votePoll(event) {
+            event.preventDefault();
+            const form = document.getElementById('pollForm');
+            const result = document.getElementById('pollResult');
+            const team = form.team.value;
+            if (!team) return false;
+            result.style.display = 'block';
+            result.textContent = `¡Gracias por votar! Tu favorito: ${team}`;
+            form.style.display = 'none';
+            return false;
+        }
+        // Comentarios interactivos
+        function addComment(event) {
+            event.preventDefault();
+            const name = document.getElementById('userName').value;
+            const comment = document.getElementById('userComment').value;
+            const list = document.getElementById('commentsList');
+            const div = document.createElement('div');
+            div.className = 'comment-item';
+            div.innerHTML = `<strong>${name}:</strong> <span>${comment}</span>`;
+            list.prepend(div);
+            document.getElementById('commentForm').reset();
+            return false;
+        }
     </script>
 </body>
 </html>
