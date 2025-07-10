@@ -1178,6 +1178,49 @@ header img:hover {
     margin-bottom: 20px;
 }
 
+/* Mejora de contraste para la encuesta rápida */
+.poll-section form,
+.poll-section form label,
+.poll-section form input[type="radio"] + label,
+.poll-section form input[type="radio"] {
+    color: #222 !important;
+}
+
+.poll-section form label,
+.poll-section form label[for] {
+    color: #222 !important;
+    font-weight: bold;
+}
+
+.poll-section form input[type="radio"] {
+    accent-color: #ffdb00;
+    margin-right: 5px;
+}
+
+.poll-section form input[type="radio"] + label {
+    color: #444 !important;
+    font-weight: normal;
+    margin-right: 15px;
+    font-size: 1em;
+}
+
+.poll-section form button {
+    background: linear-gradient(45deg, #ffdb00, #ff9500);
+    color: #000;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.poll-section form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 219, 0, 0.4);
+}
+
 /* Responsive design */
 @media screen and (max-width: 768px) {
     .styled-table, .styled-table thead, .styled-table tbody, .styled-table th, .styled-table td, .styled-table tr {
