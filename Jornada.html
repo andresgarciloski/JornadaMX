@@ -1,172 +1,235 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
-    <title>Resultados de partidos de fútbol</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultados de partidos de fútbol</title>
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #f5f5f5;
+      --gold: #D4AF37;
+      --green: #006341;
+      --red: #ce1126;
+      --white: #ffffff;
+      --row: #1a1a1a;
+      --hover: #2a2a2a;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--green), var(--white), var(--red));
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 14px 20px;
+      color: var(--bg);
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: var(--gold);
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: var(--gold);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+      background-color: var(--white); /* fondo blanco detrás de la tabla */
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--bg); /* fondo negro en la tabla */
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    }
+
+    th, td {
+      padding: 12px 16px;
+      text-align: center;
+      color: var(--text);
+    }
+
+    th {
+      background-color: var(--gold);
+      color: var(--bg);
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: var(--row);
+    }
+
+    tr:hover {
+      background-color: var(--hover);
+    }
+
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        background: var(--row);
+        padding: 10px;
+      }
+
+      td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        color: var(--text);
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 16px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+        color: var(--gold);
+      }
+    }
+  </style>
 </head>
 <body>
-    <section class="Fuente-Igual">
-        <header class="header-flex">
-            <img src="imgeq/logo.nuevo.png" class="logo-img" alt="Logo JornadaMx">
-            <div class="header-text">
-                <h1>JornadaMx</h1>
-                <p>¡La información más nueva de nuestra liga!</p>
-            </div>
-        </header>
-    </section>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="Inicio.html">Inicio</a></li>
-                <li><a href="Jornada.html">Jornada Actual</a></li>
-                <li><a href="Tabla-General.html">Tabla General</a></li>
-                <li><a href="tabla-goleadores.html">Tabla de Goleo</a></li>
-                <li><a href="equiposligamx.html">Equipos</a></li>
-                <li><a href="tablaanualmx.html">Tabla Anual</a></li>
-                <li><a href="PartidosP.html">Partidos Pasados</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="welcome-hero">
-        <div class="hero-content">
-            <h2>📅 Jornada Actual</h2>
-            <p class="hero-subtitle">Resultados de la semana en la Liga MX</p>
-        </div>
-    </section>
-    <section class="main-content">
-        <article>
-            <div class="section-header">
-                <h3>⚽ Partidos de la Semana</h3>
-                <p>Consulta los resultados y próximos partidos de la jornada</p>
-            </div>
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th>Equipo Local</th>
-                        <th>Resultado</th>
-                        <th>Equipo Visitante</th>
-                        <th>Fecha</th>
-                        <th>Hora</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>América</td>
-                        <td>2-1</td>
-                        <td>Cruz Azul</td>
-                        <td>06/07/2025</td>
-                        <td>20:00</td>
-                    </tr>
-                    <tr>
-                        <td>Chivas</td>
-                        <td>1-0</td>
-                        <td>Pumas</td>
-                        <td>06/07/2025</td>
-                        <td>18:00</td>
-                    </tr>
-                    <tr>
-                        <td>Tigres</td>
-                        <td>3-2</td>
-                        <td>Monterrey</td>
-                        <td>05/07/2025</td>
-                        <td>21:00</td>
-                    </tr>
-                    <tr>
-                        <td>Atlas</td>
-                        <td>0-1</td>
-                        <td>León</td>
-                        <td>05/07/2025</td>
-                        <td>19:00</td>
-                    </tr>
-                    <tr>
-                        <td>Santos</td>
-                        <td>2-2</td>
-                        <td>Toluca</td>
-                        <td>04/07/2025</td>
-                        <td>20:30</td>
-                    </tr>
-                    <tr>
-                        <td>Puebla</td>
-                        <td>1-3</td>
-                        <td>Tijuana</td>
-                        <td>04/07/2025</td>
-                        <td>17:00</td>
-                    </tr>
-                    <tr>
-                        <td>Pachuca</td>
-                        <td>2-0</td>
-                        <td>Necaxa</td>
-                        <td>03/07/2025</td>
-                        <td>19:30</td>
-                    </tr>
-                    <tr>
-                        <td>Querétaro</td>
-                        <td>1-1</td>
-                        <td>Atlético San Luis</td>
-                        <td>03/07/2025</td>
-                        <td>21:00</td>
-                    </tr>
-                    <tr>
-                        <td>Mazatlán</td>
-                        <td>0-2</td>
-                        <td>FC Juárez</td>
-                        <td>02/07/2025</td>
-                        <td>20:00</td>
-                    </tr>
-                    <tr>
-                        <td>Puebla</td>
-                        <td>-</td>
-                        <td>Atlas</td>
-                        <td>2025-07-11</td>
-                        <td>19:00</td>
-                    </tr>
-                    <tr>
-                        <td>FC Juárez</td>
-                        <td>-</td>
-                        <td>América</td>
-                        <td>2025-07-11</td>
-                        <td>21:00</td>
-                    </tr>
-                    <tr>
-                        <td>Santos Laguna</td>
-                        <td>-</td>
-                        <td>Universidad Nacional</td>
-                        <td>2025-07-12</td>
-                        <td>19:00</td>
-                    </tr>
-                    <tr>
-                        <td>Toluca</td>
-                        <td>-</td>
-                        <td>Necaxa</td>
-                        <td>2025-07-12</td>
-                        <td>19:00</td>
-                    </tr>
-                    <tr>
-                        <td>Cruz Azul</td>
-                        <td>-</td>
-                        <td>Mazatlán FC</td>
-                        <td>2025-07-12</td>
-                        <td>21:05</td>
-                    </tr>
-                    <tr>
-                        <td>Pachuca</td>
-                        <td>-</td>
-                        <td>Monterrey</td>
-                        <td>2025-07-13</td>
-                        <td>17:00</td>
-                    </tr>
-                    <tr>
-                        <td>León</td>
-                        <td>-</td>
-                        <td>Atlético de San Luis</td>
-                        <td>2025-07-13</td>
-                        <td>19:00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </article>
-    </section>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Inicio.html">Inicio</a></li>
+        <li><a href="Jornada.html">Jornada Actual</a></li>
+        <li><a href="Tabla-General.html">Tabla General</a></li>
+        <li><a href="tabla-goleadores.html">Tabla de Goleo</a></li>
+        <li><a href="equiposligamx.html">Equipos</a></li>
+        <li><a href="tablaanualmx.html">Tabla Anual</a></li>
+        <li><a href="PartidosP.html">Partidos Pasados</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Resultados de esta semana</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Equipo Local</th>
+          <th>Resultado</th>
+          <th>Equipo Visitante</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Equipo Local">América</td>
+          <td data-label="Resultado">2-1</td>
+          <td data-label="Equipo Visitante">Cruz Azul</td>
+          <td data-label="Fecha">06/07/2025</td>
+          <td data-label="Hora">20:00</td>
+        </tr>
+        <tr>
+          <td data-label="Equipo Local">Chivas</td>
+          <td data-label="Resultado">1-0</td>
+          <td data-label="Equipo Visitante">Pumas</td>
+          <td data-label="Fecha">06/07/2025</td>
+          <td data-label="Hora">18:00</td>
+        </tr>
+        <tr>
+          <td data-label="Equipo Local">Tigres</td>
+          <td data-label="Resultado">3-2</td>
+          <td data-label="Equipo Visitante">Monterrey</td>
+          <td data-label="Fecha">05/07/2025</td>
+          <td data-label="Hora">21:00</td>
+        </tr>
+        <tr>
+          <td data-label="Equipo Local">Atlas</td>
+          <td data-label="Resultado">0-1</td>
+          <td data-label="Equipo Visitante">León</td>
+          <td data-label="Fecha">05/07/2025</td>
+          <td data-label="Hora">19:00</td>
+        </tr>
+        <tr>
+          <td data-label="Equipo Local">Santos</td>
+          <td data-label="Resultado">2-2</td>
+          <td data-label="Equipo Visitante">Toluca</td>
+          <td data-label="Fecha">04/07/2025</td>
+          <td data-label="Hora">20:30</td>
+        </tr>
+        <tr>
+          <td data-label="Equipo Local">Puebla</td>
+          <td data-label="Resultado">1-3</td>
+          <td data-label="Equipo Visitante">Tijuana</td>
+          <td data-label="Fecha">04/07/2025</td>
+          <td data-label="Hora">17:00</td>
+        </tr>
+        <tr>
+          <td data-label="Equipo Local">Pachuca</td>
+          <td data-label="Resultado">2-0</td>
+          <td data-label="Equipo Visitante">Necaxa</td>
+          <td data-label="Fecha">03/07/2025</td>
+          <td data-label="Hora">19:30</td>
+        </tr>
+        <tr>
+          <td data-label="Equipo Local">Querétaro</td>
+          <td data-label="Resultado">1-1</td>
+          <td data-label="Equipo Visitante">Atlético San Luis</td>
+          <td data-label="Fecha">03/07/2025</td>
+          <td data-label="Hora">21:00</td>
+        </tr>
+        <tr>
+          <td data-label="Equipo Local">Mazatlán</td>
+          <td data-label="Resultado">0-2</td>
+          <td data-label="Equipo Visitante">FC Juárez</td>
+          <td data-label="Fecha">02/07/2025</td>
+          <td data-label="Hora">20:00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
+
