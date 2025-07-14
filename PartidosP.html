@@ -1,189 +1,242 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Partidos Pasados</title>
-  <style>
-    :root {
-      --bg: #000000;
-      --text: #e0e0e0;
-      --row: #1a1a1a;
-      --hover: #2a2a2a;
-      --header: #222222;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: var(--bg);
-      color: var(--text);
-    }
-
-    header {
-      background-color: var(--header);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-
-    nav ul li a {
-      display: block;
-      padding: 14px 20px;
-      color: var(--text);
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    nav ul li a:hover {
-      background-color: var(--hover);
-    }
-
-    h1 {
-      text-align: center;
-      margin: 40px 0 20px;
-      color: var(--text);
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-      background-color: var(--bg);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: var(--row);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    }
-
-    th, td {
-      padding: 12px 16px;
-      text-align: center;
-      color: var(--text);
-    }
-
-    th {
-      background-color: var(--header);
-      font-weight: 600;
-    }
-
-    tr:nth-child(even) {
-      background-color: #111;
-    }
-
-    tr:hover {
-      background-color: var(--hover);
-    }
-
-    @media (max-width: 768px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-
-      thead {
-        display: none;
-      }
-
-      tr {
-        margin-bottom: 15px;
-        border: 1px solid #333;
-        border-radius: 5px;
-        background: var(--row);
-        padding: 10px;
-      }
-
-      td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-      }
-
-      td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 16px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        font-weight: bold;
-        text-align: left;
-        color: var(--text);
-      }
-    }
-  </style>
+    <title>Resultados de la tabla Jornada</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-
-  <header>
-    <nav>
-      <ul>
-        <li><a href="Inicio.html">Inicio</a></li>
-        <li><a href="Jornada.html">Jornada Actual</a></li>
-        <li><a href="Tabla-General.html">Tabla General</a></li>
-        <li><a href="tabla-goleadores.html">Tabla de Goleo</a></li>
-        <li><a href="equiposligamx.html">Equipos</a></li>
-        <li><a href="tablaanualmx.html">Tabla Anual</a></li>
-        <li><a href="PartidosP.html">Partidos Pasados</a></li>
-      </ul>
+    <section class="Fuente-Igual">
+        <header class="header-flex">
+            <img src="imgeq/logo.nuevo.png" class="logo-img" alt="Logo JornadaMx">
+            <div class="header-text">
+                <h1>JornadaMx</h1>
+                <p>¡La información más nueva de nuestra liga!</p>
+            </div>
+        </header>
+    </section>
+<header>
+    <nav><ul>
+    <li><a href="Inicio.html">Inicio</a></li>
+            <li><a href="Jornada.html">Jornada Actual</a></li>
+            <li><a href="Tabla-General.html">Tabla General</a></li>
+            <li><a href="tabla-goleadores.html">Tabla de Goleo</a></li>
+            <li><a href="equiposligamx.html">Equipos</a></li>
+            <li><a href="tablaanualmx.html">Tabla Anual</a></li>
+            <li><a href="PartidosP.html">Partidos Pasados</a></li>
+        </ul>
     </nav>
-  </header>
-
-  <div class="container">
-    <h1>Partidos Pasados</h1>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Jornada</th>
-          <th>Equipo Local</th>
-          <th>Resultado</th>
-          <th>Equipo Visitante</th>
-          <th>Fecha</th>
-          <th>Hora</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Jornada">16</td>
-          <td data-label="Equipo Local">América</td>
-          <td data-label="Resultado">2-0</td>
-          <td data-label="Equipo Visitante">Pumas</td>
-          <td data-label="Fecha">2025-06-29</td>
-          <td data-label="Hora">20:00</td>
-        </tr>
-        <tr>
-          <td data-label="Jornada">16</td>
-          <td data-label="Equipo Local">Tigres</td>
-          <td data-label="Resultado">1-1</td>
-          <td data-label="Equipo Visitante">Cruz Azul</td>
-          <td data-label="Fecha">2025-06-29</td>
-          <td data-label="Hora">18:00</td>
-        </tr>
-        <tr>
-          <td data-label="Jornada">16</td>
-          <td data-label="Equipo Local">Monterrey</td>
-          <td data-label="Resultado">3-1</td>
-          <td data-label="Equipo Visitante">Santos</td>
-          <td data-label="Fecha">2025-06-28</td>
-          <td data-label="Hora">21:00</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    </header>
+    <section class="welcome-hero">
+        <div class="hero-content">
+            <h2>📋 Partidos Pasados</h2>
+            <p class="hero-subtitle">Historial de resultados recientes de la Liga MX</p>
+        </div>
+    </section>
+    <section class="main-content">
+        <article>
+            <div class="section-header">
+                <h3>🕑 Resultados Recientes</h3>
+                <p>Consulta los marcadores y fechas de partidos anteriores</p>
+            </div>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Jornada</th>
+                        <th>Equipo Local</th>
+                        <th>Resultado</th>
+                        <th>Equipo Visitante</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>16</td>
+                        <td>América</td>
+                        <td>2-0</td>
+                        <td>Pumas</td>
+                        <td>2025-06-29</td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Tigres</td>
+                        <td>1-1</td>
+                        <td>Cruz Azul</td>
+                        <td>2025-06-29</td>
+                        <td>18:00</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Monterrey</td>
+                        <td>3-1</td>
+                        <td>Santos</td>
+                        <td>2025-06-28</td>
+                        <td>21:00</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>León</td>
+                        <td>2-0</td>
+                        <td>Querétaro</td>
+                        <td>2025-06-28</td>
+                        <td>19:00</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Chivas</td>
+                        <td>1-2</td>
+                        <td>Toluca</td>
+                        <td>2025-06-27</td>
+                        <td>20:30</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Atlas</td>
+                        <td>0-1</td>
+                        <td>América</td>
+                        <td>2025-06-22</td>
+                        <td>17:00</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Pachuca</td>
+                        <td>2-1</td>
+                        <td>Tijuana</td>
+                        <td>2025-06-21</td>
+                        <td>19:30</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Necaxa</td>
+                        <td>1-1</td>
+                        <td>Monterrey</td>
+                        <td>2025-06-21</td>
+                        <td>21:00</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Puebla</td>
+                        <td>0-3</td>
+                        <td>Tigres</td>
+                        <td>2025-06-20</td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Cruz Azul</td>
+                        <td>2-1</td>
+                        <td>León</td>
+                        <td>2025-06-15</td>
+                        <td>18:00</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Santos</td>
+                        <td>1-0</td>
+                        <td>Atlas</td>
+                        <td>2025-06-15</td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Toluca</td>
+                        <td>3-2</td>
+                        <td>Pachuca</td>
+                        <td>2025-06-14</td>
+                        <td>19:00</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Tijuana</td>
+                        <td>1-1</td>
+                        <td>Necaxa</td>
+                        <td>2025-06-14</td>
+                        <td>21:00</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Pumas</td>
+                        <td>2-0</td>
+                        <td>Mazatlán</td>
+                        <td>2025-06-08</td>
+                        <td>17:00</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>FC Juárez</td>
+                        <td>0-2</td>
+                        <td>América</td>
+                        <td>2025-06-07</td>
+                        <td>19:30</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Atlético San Luis</td>
+                        <td>1-3</td>
+                        <td>Chivas</td>
+                        <td>2025-06-07</td>
+                        <td>21:00</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Puebla</td>
+                        <td>-</td>
+                        <td>Atlas</td>
+                        <td>2025-07-11</td>
+                        <td>19:00</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>FC Juárez</td>
+                        <td>-</td>
+                        <td>América</td>
+                        <td>2025-07-11</td>
+                        <td>21:00</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Santos Laguna</td>
+                        <td>-</td>
+                        <td>Universidad Nacional</td>
+                        <td>2025-07-12</td>
+                        <td>19:00</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Toluca</td>
+                        <td>-</td>
+                        <td>Necaxa</td>
+                        <td>2025-07-12</td>
+                        <td>19:00</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Cruz Azul</td>
+                        <td>-</td>
+                        <td>Mazatlán FC</td>
+                        <td>2025-07-12</td>
+                        <td>21:05</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Pachuca</td>
+                        <td>-</td>
+                        <td>Monterrey</td>
+                        <td>2025-07-13</td>
+                        <td>17:00</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>León</td>
+                        <td>-</td>
+                        <td>Atlético de San Luis</td>
+                        <td>2025-07-13</td>
+                        <td>19:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </section>
 </body>
 </html>
-
